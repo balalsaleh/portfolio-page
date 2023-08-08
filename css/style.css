@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bc: rgb(254, 0, 0);
+  --cc: rgb(8, 132, 255);
+  --dc: #05181E;
+  --white: #fff;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -20,4 +27,243 @@ h6 {
 
 p {
   margin: 0;
+}
+
+header {
+  padding: 0px 0% 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: left;
+  background-color: var(--bc);
+  box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+  color: var(--bc);
+  background-color: var(--dc);
+  padding: 5px 0.5% 5px 0%;
+  margin: 1%;
+  font-size: 4vw;
+  font-weight: bold;
+  line-height: 1;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 5px 15px;
+  color: #050505;
+  margin-right: 20px;
+  background-repeat: no-repeat;
+  background-size: 10% 1em;
+  background-position: bottom;
+  transition: all 0.5s ease-in-out;
+  font-size: 1.4rem;
+}
+
+nav a:hover {
+  background-size: 100% 100%;
+  color: var(--white);
+}
+
+nav a:last-child {
+  margin-right: 0;
+}
+
+main {
+  margin-top: 20px;
+  margin-bottom: 45px;
+}
+
+.hero-banner {
+  background: rgba(250, 246, 8, 0.849);
+  background-image: url("../images/02-hero-bg.jpg"), linear-gradient(180deg, var(--cc) 0%, var(--bc) 100%);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: soft-light;
+  min-height: 20vh;
+  color: var(--cc);
+  padding: 1% 2%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: far left;
+}
+
+.hero-banner div {
+  flex: 0 0 80%;
+}
+
+.hero-banner h2 {
+  background-color: var(--bc);
+  color: var(--cc);
+  margin: 0;
+  padding: 5px 10px;
+  font-size: 2.3rem;
+  line-height: 1.2;
+  display: inline;
+}
+
+.page-wrapper {
+  max-width: 88%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-section {
+  margin: 25px 0;
+  padding: 5px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.page-section > h2 {
+  display: flex;
+  align-items: center;
+  padding-right: 2px;
+  border-right: 5px solid var(--cc);
+  font-size: 1vw;
+  line-height: 1.1;
+}
+
+.page-section > div {
+  flex: 0 0 77%;
+}
+
+.page-section p {
+  margin-bottom: 25px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-item {
+  border: 5px solid var(--bc);
+  background-color: var(--cc);
+  color: var(--bc);
+  min-height: 100px;
+  max-height: 200px;
+  flex-basis: calc(20% - 1em);
+  display: flex;
+  align-items: flex-end;
+  padding: 0 0 20px 0;
+  margin: 0.5em;
+  text-decoration: none;
+  background-blend-mode: soft-light;
+  background-size: 150%;
+  transition: all 0.5s;
+  font-size: 0.9rem;
+}
+
+.flex-item:first-child {
+  min-height: 250px;
+  flex-basis: 100%;
+}
+
+.flex-item:hover {
+  background-color: aqua;
+}
+
+.flex-item div {
+  background-color: var(--bc);
+}
+
+.flex-item h3 {
+  font-size: 1.6rem;
+}
+
+.contact address {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.contact address a {
+  color: var(--bc);
+  padding: 5px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  background-image: linear-gradient(250deg, var(--bc) 0%, var(--cc) 100%);
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: bottom;
+  transition: all 0.25s ease-in;
+}
+
+.contact address a:hover {
+  background-size: 10% 10%;
+  color: #000000;
+}
+
+.buddy {
+  background-image: url("../images/02-run-buddy.jpg");
+}
+
+@media screen and (max-width: 1000px) {
+  header {
+    padding: 0 0 10px 0;
+    justify-content: center;
+    text-align: center;
+  }
+
+  header h1 {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 1px;
+    font-size: 6vw;
+  }
+
+  header nav {
+    justify-content: center;
+  }
+
+  .page-section > h2,
+  .page-section > div {
+    flex: 0 0 10%;
+  }
+
+  .page-section > h2 {
+    border-right: none;
+    border-bottom: 4px solid var(--bc);
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .flex-item,
+  .flex-item:first-child {
+    flex-basis: 100%;
+  }
+
+  .flex-item:first-child {
+    min-height: 50px;
+  }
+
+  .hero-banner {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contact address {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
