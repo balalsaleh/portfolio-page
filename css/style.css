@@ -3,9 +3,9 @@
 }
 
 :root {
-  --bc: rgb(254, 0, 0);
-  --cc: rgb(8, 132, 255);
-  --dc: #05181E;
+  --main: rgb(118, 127, 155);
+  --secondary: rgb(8, 132, 255);
+  --tertiary: #05181E;
   --white: #fff;
 }
 
@@ -14,6 +14,10 @@ body {
   padding: 0;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   line-height: 1.5;
+}
+
+span {
+  font-size: xx-small;
 }
 
 h1,
@@ -30,41 +34,40 @@ p {
 }
 
 header {
-  padding: 0px 0% 0%;
+  padding: 15px 6% 15px 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  align-items: left;
-  background-color: var(--bc);
-  box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  background-color: var(--tertiary);
+  box-shadow: 0px 5px 35px rgba(6, 231, 6, 0.5);
 }
 
 header h1 {
-  color: var(--bc);
-  background-color: var(--dc);
-  padding: 5px 0.5% 5px 0%;
-  margin: 1%;
+  color: var(--tertiary);
+  background-color: var(--secondary);
+  padding: 5px 1% 5px 6%;
+  margin: 0;
   font-size: 4vw;
   font-weight: bold;
   line-height: 1;
 }
 
 nav {
-  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
 nav a {
   text-decoration: none;
-  padding: 5px 15px;
-  color: #050505;
-  margin-right: 20px;
-  background-repeat: no-repeat;
-  background-size: 10% 1em;
+  padding: 5px 10px;
+  color: var(--secondary);
+  margin-right: 16px;
+  background-image: linear-gradient(270deg, var(--secondary));
+  background-size: 100% 0.2em;
   background-position: bottom;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.25s ease-in;
   font-size: 1.4rem;
 }
 
@@ -83,43 +86,44 @@ main {
 }
 
 .hero-banner {
-  background: rgba(250, 246, 8, 0.849);
-  background-image: url("../images/02-hero-bg.jpg"), linear-gradient(180deg, var(--cc) 0%, var(--bc) 100%);
+  background: rgba(48, 48, 25, 0.849);
+  background-image: url("../images/02-hero-bg.jpg"), linear-gradient(180deg, var(--secondary) 0%, var(--main) 100%);
   background-size: cover;
   background-position: center;
   background-blend-mode: soft-light;
-  min-height: 20vh;
-  color: var(--cc);
-  padding: 1% 2%;
+  min-height: 30vh;
+  color: var(--tertiary);
+  padding: 2% 6%;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  text-align: far left;
+  text-align: right;
 }
 
 .hero-banner div {
-  flex: 0 0 80%;
+  flex: 0 0 90%;
 }
 
 .hero-banner h2 {
-  background-color: var(--bc);
-  color: var(--cc);
+  background-color: var(--secondary);
+  color: var(--tertiary);
   margin: 0;
   padding: 5px 10px;
   font-size: 2.3rem;
   line-height: 1.2;
   display: inline;
+  justify-content: center;
 }
 
 .page-wrapper {
-  max-width: 88%;
+  max-width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
 
 .page-section {
   margin: 25px 0;
-  padding: 5px 0;
+  padding: 10px 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -128,34 +132,40 @@ main {
 }
 
 .page-section > h2 {
-  display: flex;
-  align-items: center;
-  padding-right: 2px;
-  border-right: 5px solid var(--cc);
-  font-size: 1vw;
+  display: 0 0 20%;
+  align-items: right;
+  padding-right: 15px;
+  border-right: 4px solid var(--main);
+  font-size: 4vw;
   line-height: 1.1;
+  text-align: center;
 }
 
 .page-section > div {
-  flex: 0 0 77%;
+  flex: 0 0 70%;
+}
+
+.avatar {
+  size: inherit;
 }
 
 .page-section p {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .flex-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .flex-item {
-  border: 5px solid var(--bc);
-  background-color: var(--cc);
-  color: var(--bc);
-  min-height: 100px;
-  max-height: 200px;
-  flex-basis: calc(20% - 1em);
+  border: 5px solid var(--secondary);
+  background-color: var(--main);
+  color: var(--tertiary);
+  min-height: 150px;
+  max-height: 150px;
+  flex-basis: calc(50% - 1em);
   display: flex;
   align-items: flex-end;
   padding: 0 0 20px 0;
@@ -173,11 +183,11 @@ main {
 }
 
 .flex-item:hover {
-  background-color: aqua;
+  background-color:#235366;
 }
 
 .flex-item div {
-  background-color: var(--bc);
+  background-color: var(--secondary);
 }
 
 .flex-item h3 {
@@ -193,11 +203,11 @@ main {
 }
 
 .contact address a {
-  color: var(--bc);
+  color: var(--tertiary);
   padding: 5px;
   text-decoration: none;
   font-size: 1.3rem;
-  background-image: linear-gradient(250deg, var(--bc) 0%, var(--cc) 100%);
+  background-image: linear-gradient(250deg, var(--secondary) 0%, var(--main) 100%);
   display: inline-block;
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
@@ -210,42 +220,18 @@ main {
   color: #000000;
 }
 
-.buddy {
-  background-image: url("../images/02-run-buddy.jpg");
+.p1 {
+  background-image: url("../images/horiseon1.png");
 }
 
-@media screen and (max-width: 1000px) {
-  header {
-    padding: 0 0 10px 0;
-    justify-content: center;
-    text-align: center;
-  }
-
-  header h1 {
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 1px;
-    font-size: 6vw;
-  }
-
-  header nav {
-    justify-content: center;
-  }
-
-  .page-section > h2,
-  .page-section > div {
-    flex: 0 0 10%;
-  }
-
-  .page-section > h2 {
-    border-right: none;
-    border-bottom: 4px solid var(--bc);
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    text-align: center;
-    font-size: 2vw;
-  }
+.p2 {
+  background-image: url("../images/preworkstudyguide.png");
 }
+
+.p3 {
+  background-image: url("../images/day2.png");
+}
+
 
 @media screen and (max-width: 760px) {
   .flex-item,
